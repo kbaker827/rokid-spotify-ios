@@ -1,9 +1,15 @@
 # Rokid Spotify HUD
 
+
+> **🔵 Connectivity Update — May 2025**
+> The glasses connection has been migrated from **raw TCP sockets** to
+> **Bluetooth via the Rokid AI glasses SDK** (`pod 'RokidSDK' ~> 1.10.2`).
+> No Wi-Fi port forwarding is needed. See **SDK Setup** below.
+
 iOS app that connects to the **Spotify Web API** and streams now-playing track info to **Rokid AR glasses** via TCP :8094.
 
 ```
-Spotify Web API ──HTTPS──▶ iPhone (RokidSpotify) ──TCP :8094──▶ Rokid Glasses
+Spotify Web API ──HTTPS──▶ iPhone (RokidSpotify) ──Bluetooth/RokidSDK──▶ Rokid Glasses
 ```
 
 ## What's displayed on the glasses (TCP :8094)
