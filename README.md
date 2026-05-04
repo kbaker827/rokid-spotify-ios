@@ -6,13 +6,13 @@
 > **Bluetooth via the Rokid AI glasses SDK** (`pod 'RokidSDK' ~> 1.10.2`).
 > No Wi-Fi port forwarding is needed. See **SDK Setup** below.
 
-iOS app that connects to the **Spotify Web API** and streams now-playing track info to **Rokid AR glasses** via TCP :8094.
+iOS app that connects to the **Spotify Web API** and streams now-playing track info to **Rokid AR glasses** via Bluetooth/RokidSDK.
 
 ```
 Spotify Web API ──HTTPS──▶ iPhone (RokidSpotify) ──Bluetooth/RokidSDK──▶ Rokid Glasses
 ```
 
-## What's displayed on the glasses (TCP :8094)
+## What's displayed on the glasses
 
 ```json
 {"type":"playback","text":"▶ Blinding Lights — The Weeknd  |  2:14/3:20","playing":true}
@@ -72,7 +72,7 @@ The only thing left for each app is filling in the three credential constants (`
 
 ### 2. Configure the iOS app
 
-1. Open `RokidSpotify.xcodeproj` in Xcode 15+.
+1. Open `RokidSpotify.xcworkspace` in Xcode 15+ (after running `pod install`) 15+.
 2. Set your team in Signing & Capabilities.
 3. Build and run on iPhone (iOS 17+).
 4. In **Settings**: paste your Client ID.
@@ -112,4 +112,4 @@ App → auth URL with code_challenge (SHA256 of random verifier)
 - Xcode 15+
 - Spotify account (free or Premium)
 - Spotify Premium required for playback control commands
-- Rokid AR glasses on the same Wi-Fi (optional)
+- Rokid AI glasses (paired via Bluetooth — no Wi-Fi needed) (optional)
